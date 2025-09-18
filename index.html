@@ -3,292 +3,545 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mohammad Areeb Qazi — AI Engineer</title>
-  <meta name="description" content="Portfolio website for Mohammad Areeb Qazi — AI Engineer & Researcher (MBZUAI)." />
+  <title>Mohammad Areeb Qazi — Multimodal Healthcare AI</title>
+  <meta name="description" content="Portfolio of Mohammad Areeb Qazi — Multimodal Healthcare AI researcher and engineer (MBZUAI)." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#0b0f17; --card:#101726; --text:#e6edf3; --muted:#9fb0c3; --accent:#6ab0ff; --accent-2:#9bffd1; --ring:rgba(106,176,255,.4); --shadow:rgba(0,0,0,.35); }
-    body.light { --bg:#f7f9fc; --card:#ffffff; --text:#0b0f17; --muted:#4b5a6a; --accent:#1e66f5; --accent-2:#0db37f; --ring:rgba(30,102,245,.25); --shadow:rgba(0,0,0,.12); }
+    :root{
+      --bg:#f7f8fb; --text:#0f172a; --muted:#475569; --soft:#f1f5f9; --border:#e5e7eb; --accent:#6d6af8; --accent-2:#9a95ff; --link:#3b5bdb;
+      --radius:18px; --shadow:0 12px 28px rgba(2,6,23,.08);
+      --accent-glow: rgba(109,106,248,.18);
+      --tile-hover: linear-gradient(180deg, rgba(109,106,248,.12), rgba(109,106,248,.06));
+    }
+    body.dark{
+      --bg:#0b0f17; --text:#e6edf3; --muted:#9fb0c3; --soft:#0f1725; --border:rgba(255,255,255,.12); --accent:#6ab0ff; --accent-2:#9bffd1; --link:#9bbcff;
+      --shadow:0 14px 34px rgba(0,0,0,.4);
+      --accent-glow: rgba(106,176,255,.22);
+      --tile-hover: linear-gradient(180deg, rgba(106,176,255,.12), rgba(106,176,255,.06));
+    }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:
-      radial-gradient(1200px 800px at 80% -20%, rgba(106,176,255,.15), transparent 60%),
-      radial-gradient(800px 600px at -10% 10%, rgba(155,255,209,.12), transparent 50%), var(--bg);
-      color:var(--text);line-height:1.55}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(10px);background:color-mix(in oklab, var(--bg), transparent 40%);border-bottom:1px solid rgba(127,127,127,.16)}
-    .nav{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-    .brand{font-weight:800;letter-spacing:.2px}
-    .nav a{color:var(--text);opacity:.85;margin-left:18px}
-    .nav-controls{display:flex;align-items:center;gap:10px}
-    .toggle{appearance:none;border:1px solid rgba(127,127,127,.25);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));color:var(--text);padding:8px 10px;border-radius:12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-    .toggle:hover{transform:translateY(-1px);transition:120ms ease}
-    .container{max-width:1080px;margin:0 auto;padding:28px 20px}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:40px 0 20px}
-    .badge{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border:1px solid rgba(255,255,255,.08);border-radius:999px;background:rgba(255,255,255,.03);font-size:12px;color:var(--muted)}
-    .title{font-size:clamp(28px,4.5vw,52px);line-height:1.07;margin:14px 0 10px;font-weight:800;letter-spacing:-.02em}
-    .subtitle{color:var(--muted);font-size:clamp(14px,2vw,18px)}
-    .cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));color:var(--text);box-shadow:0 8px 20px var(--shadow)}
-    .btn.primary{background:linear-gradient(180deg, rgba(106,176,255,.4), rgba(106,176,255,.2));border-color:rgba(106,176,255,.5);box-shadow:0 12px 30px rgba(106,176,255,.25)}
-    .btn:hover{transform:translateY(-1px);transition:120ms ease;text-decoration:none}
-    .card-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .card{grid-column:span 12;background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px;box-shadow:0 10px 30px var(--shadow)}
-    .card h3{margin:4px 0 10px;font-size:18px;letter-spacing:.2px}
-    .card p{margin:0 0 10px;color:var(--muted)}
-    .tag{display:inline-block;margin-right:8px;margin-top:6px;padding:4px 10px;font-size:12px;border:1px solid rgba(255,255,255,.1);border-radius:999px;color:var(--muted)}
-    .section-title{font-size:22px;font-weight:700;margin:36px 0 14px;letter-spacing:.3px}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .avatar{inline-size:180px;block-size:180px;border-radius:24px;object-fit:cover;border:1px solid rgba(255,255,255,.08);box-shadow:0 15px 40px var(--shadow)}
-    footer{color:var(--muted);padding:40px 0 60px;text-align:center}
-    .socials{display:flex;gap:14px;margin-top:8px}
-    .socials a{display:inline-flex;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
-    .small{font-size:13px;color:var(--muted)}
-    .hl-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .hl{grid-column:span 6;display:grid;grid-template-rows:auto 1fr;gap:10px;position:relative}
-    .hl.card{overflow:hidden;transition:transform .18s ease, box-shadow .18s ease}
-    .hl.card:hover{transform:translateY(-2px);box-shadow:0 18px 50px color-mix(in oklab, var(--accent) 30%, black 70%)}
-    .hl::before{content:"";position:absolute;inset:-40%;background:radial-gradient(600px 200px at 20% -10%, color-mix(in oklab, var(--accent) 35%, transparent), transparent 45%);opacity:.25;pointer-events:none;transform:rotate(8deg)}
-    .hl img{width:100%;height:200px;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.08)}
-    .pulse{position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:color-mix(in oklab, var(--accent), transparent 70%);color:var(--text);font-size:12px;border:1px solid color-mix(in oklab, var(--accent), transparent 40%)}
-    .pulse-dot{width:6px;height:6px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 0 color-mix(in oklab, var(--accent), transparent 0%);animation:pulse 1.8s infinite}
-    @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in oklab, var(--accent), transparent 0%)}70%{box-shadow:0 0 0 8px color-mix(in oklab, var(--accent), transparent 85%)}100%{box-shadow:0 0 0 0 color-mix(in oklab, var(--accent), transparent 100%)}}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.hl{grid-column:span 12}}
+    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.6}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.6}
+    a{color:var(--link)} a:hover{text-decoration:underline}
+    /* layout */
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px); background: rgba(255,255,255,.75); border-bottom:1px solid var(--border)}
+    .nav{max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px}
+    .brand{font-weight:800; letter-spacing:.2px}
+    .nav a{color:var(--text); opacity:.85; margin-left:18px; text-decoration:none}
+    .nav a.active{color:var(--accent); font-weight:600}
+    .container{max-width:1080px; margin:0 auto; padding:28px 20px}
+    section{scroll-margin-top:80px}
+    /* hero */
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding:36px 0 18px}
+    .title{font-size:clamp(28px,4.5vw,48px); line-height:1.1; margin:8px 0 10px; font-weight:800; letter-spacing:-.02em}
+    .subtitle{color:var(--muted)}
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--border); border-radius:999px; background:var(--soft); color:var(--muted); font-size:12px}
+    .cta{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid var(--border); background:linear-gradient(180deg, #fff, #f8fafc); box-shadow:var(--shadow); color:var(--text); text-decoration:none}
+    .btn.primary{background:linear-gradient(180deg, rgba(37,99,235,.12), rgba(37,99,235,.06)); border-color:rgba(37,99,235,.35); color:#0b1a3a}
+    .avatar{inline-size:180px; block-size:180px; border-radius:16px; object-fit:cover; border:1px solid var(--border); box-shadow:var(--shadow)}
+    .socials{display:flex; gap:10px; margin-top:8px}
+    .socials a{display:inline-flex; padding:9px; border-radius:12px; border:1px solid var(--border); background:var(--soft)}
+    /* sections */
+    .section-title{font-size:28px; font-weight:800; margin:40px 0 8px; letter-spacing:.2px; text-align:center}
+    .section-title + .underline{display:block; width:72px; height:4px; border-radius:999px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); margin:8px auto 24px; opacity:.9}
+    .two-col{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    .card{background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
+    .small{font-size:13px; color:var(--muted)}
+    /* latest card */
+    .latest{display:grid; gap:18px; max-width:980px; margin:0 auto}
+    .latest-card{display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid var(--border); border-radius:20px; padding:18px 20px; box-shadow:var(--shadow)}
+    .latest-icon{width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff; flex:0 0 auto; background:linear-gradient(135deg,#6d6af8,#9a95ff)}
+    .latest h3{margin:0 0 6px; font-size:20px}
+    .latest p{margin:0; color:var(--muted)}
+
+    /* about side cards */
+    .about-grid{display:grid; grid-template-columns:2fr 1fr; gap:22px}
+    .about-text{background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
+    .about-side{display:grid; gap:16px}
+    .side-card{background:#fff; border:1px solid var(--border); border-radius:16px; padding:16px 16px 16px 18px; box-shadow:var(--shadow); position:relative}
+    .side-card:before{content:""; position:absolute; inset:0 auto 0 0; width:6px; border-radius:16px 0 0 16px; background:linear-gradient(180deg,#6d6af8,#9a95ff)}
+    .side-title{margin:0 0 6px; font-weight:700}
+    .side-sub{margin:0; color:var(--muted)}
+
+    /* interests cards */
+    .interests{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
+    .interest{grid-column:span 4; background:#fff; border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
+    .interest .ibadge{width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#6d6af8,#9a95ff); color:#fff; margin-bottom:10px}
+    .interest h3{margin:0 0 6px; font-size:18px}
+    .interest p{margin:0; color:var(--muted)}
+    @media (max-width:900px){ .interest{grid-column:span 12} }
+
+    /* pubs timeline style */
+    .pubs2{display:grid; gap:18px; max-width:1080px; margin:0 auto}
+    .pubitem{display:grid; grid-template-columns:80px 1fr; gap:16px; background:#fff; border:1px solid var(--border); border-radius:18px; padding:16px; box-shadow:var(--shadow)}
+    .yearpill{align-self:flex-start; background:linear-gradient(135deg,#6d6af8,#9a95ff); color:#fff; font-weight:700; border-radius:12px; padding:10px 12px; text-align:center}
+    .pubitem h3{margin:0 0 6px; font-size:18px}
+    .pubitem .meta{margin:0; color:#3b5bdb; font-weight:600}
+    .pubitem .venue{margin:6px 0 0; color:var(--muted); font-style:italic}
+    .pubitem .desc{margin:10px 0 0; color:var(--muted)}
+
+    /* project cards */
+    .projects-grid{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
+    .proj{grid-column:span 4; background:#fff; border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
+    .proj .year{float:right; background:rgba(109,106,248,.12); color:#312e81; padding:6px 10px; border-radius:999px; font-size:12px}
+    .proj h3{margin:0 0 6px}
+    .proj p{margin:0 0 8px; color:var(--muted)}
+    .chips .chip{display:inline-block; padding:4px 8px; font-size:12px; border-radius:999px; background:#f3f4ff; color:#4545a5; margin:4px 6px 0 0; border:1px solid #e9e8ff}
+    @media (max-width:900px){ .proj{grid-column:span 12} }
+
+    /* contact grid */
+    .contact-grid{display:grid; grid-template-columns:2fr 1fr; gap:18px}
+    .contact-left{display:grid; gap:16px}
+    .contact-card{background:#fff; border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow); position:relative}
+    .contact-card:before{content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:18px 0 0 18px; background:linear-gradient(180deg,#6d6af8,#9a95ff)}
+    .c-head{display:flex; align-items:center; gap:10px; margin:0 0 8px}
+    .c-ico{width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#fff}
+
+    .link-list{display:grid; gap:14px}
+    .link-tile{display:flex; align-items:center; gap:12px; padding:16px 18px; border-radius:20px; border:1px solid var(--border); background:var(--soft);
+      text-decoration:none; color:var(--text); transition:border-color .2s, background .2s, box-shadow .2s, transform .08s}
+    .link-tile .icon{width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#fff; flex:0 0 auto}
+    .link-tile .label{font-weight:600}
+    .link-tile .arrow{margin-left:auto; opacity:.75}
+    .link-tile:hover{border-color:var(--accent); background:var(--tile-hover); box-shadow:0 8px 24px var(--accent-glow); transform:translateY(-1px)}
+
+
+    /* existing hl grid keep */
+    .hl-grid{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
+    .hl{grid-column:span 6; display:grid; grid-template-rows:auto 1fr; gap:10px}
+    .hl img{width:100%; height:180px; object-fit:cover; border-radius:12px; border:1px solid var(--border)}
+    /* research interests */
+    .pill{display:inline-block; padding:6px 10px; background:var(--soft); border:1px solid var(--border); border-radius:999px; margin:6px 8px 0 0; font-size:12px; color:var(--muted)}
+    /* pubs */
+    .pubs{display:grid; gap:24px}
+    .pub-year{font-weight:800; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; font-size:14px}
+    .pub-list{display:grid; gap:12px}
+    .pub{border-left:3px solid var(--accent); padding:10px 12px; background:linear-gradient(180deg,#fff,#f8fafc); border-radius:10px; border:1px solid var(--border)}
+    .pub h3{margin:0 0 6px; font-size:16px}
+    .pub .meta{color:var(--muted); margin:0 0 3px}
+    .tags{margin-top:6px}
+    .tag{display:inline-block; font-size:12px; padding:4px 8px; border:1px solid var(--border); border-radius:999px; background:var(--soft); color:var(--muted); margin-right:6px}
+    /* projects */
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
+    .col-6{grid-column:span 6}
+    .col-12{grid-column:span 12}
+    /* footer */
+    footer{color:var(--muted); padding:40px 0 60px; text-align:center}
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} .two-col{grid-template-columns:1fr} .hl{grid-column:span 12} .col-6{grid-column:span 12} }
     html{scroll-behavior:smooth}
+      /* --- Hero v2 (photo + map + pill) --- */
+    .hero-wrap{margin-top:12px}
+    .hero-card{position:relative;background:radial-gradient(1200px 600px at -10% -20%, rgba(99,102,241,.18), transparent 40%),radial-gradient(900px 500px at 120% 10%, rgba(147,197,253,.18), transparent 45%),linear-gradient(180deg,#f6f7ff,#eef1ff);border:1px solid var(--border);border-radius:28px;padding:34px;box-shadow:var(--shadow)}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .hero-name{font-size:clamp(34px,6vw,56px);font-weight:800;color:#5b6fd6;letter-spacing:-.02em;margin:0 0 6px}
+    .hero-role{font-size:clamp(18px,2.5vw,24px);font-weight:700;color:#6b7dfb;margin:0 0 12px}
+    .hero-bio{color:#475569;max-width:60ch}
+    .loc-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(255,255,255,.7);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);color:var(--muted);margin-top:18px}
+    .loc-pill svg{flex:0 0 auto}
+    .hero-photo{justify-self:end;display:flex;flex-direction:column;align-items:center}
+    .hero-photo img{width:210px;height:210px;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:0 20px 60px rgba(31,41,55,.25);margin-bottom:12px}
+    .map-card{margin-top:16px;width:360px;max-width:100%;border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);background:#fff}
+    /* --- Dark theme component overrides --- */
+    body.dark header{background:rgba(10,12,16,.7);border-bottom:1px solid var(--border)}
+    body.dark .nav a{color:var(--text)}
+    body.dark .badge{background:#10141b;border-color:var(--border);color:var(--muted)}
+    body.dark .card,
+    body.dark .about-text,
+    body.dark .side-card,
+    body.dark .interest,
+    body.dark .pubitem,
+    body.dark .proj,
+    body.dark .contact-card,
+    body.dark .link-tile,
+    body.dark .latest-card,
+    body.dark .map-card{background:#0f1725;border:1px solid var(--border);box-shadow:0 10px 28px rgba(0,0,0,.45)}
+    body.dark .link-tile{background:#0c121c}
+    body.dark .projects-grid .proj .year{background:rgba(235,64,52,.18);color:#ffb4ae}
+    body.dark .chips .chip{background:#1a2230;color:#c3d3ff;border:1px solid #1f2a3a}
+    body.dark .latest-icon{background:linear-gradient(135deg,#7c3aed,#ef4444)}
+    body.dark .hero-card{background:radial-gradient(1200px 600px at -10% -20%, rgba(124,58,237,.22), transparent 40%),radial-gradient(900px 500px at 120% 10%, rgba(239,68,68,.12), transparent 45%),linear-gradient(180deg,#14122a,#1a1633);border-color:var(--border)}
+    /* Typography in dark: headings white, body muted */
+    body.dark h1, body.dark h2, body.dark h3, body.dark .brand{color:#ffffff}
+    body.dark p, body.dark li, body.dark .small, body.dark .subtitle{color:#b9c6d2}
+    /* Media bits */
+    body.dark .hero-photo img{border-color:#0f0f0f; box-shadow:0 16px 50px rgba(0,0,0,.6)}
+    /* Ensure pill visible in dark */
+    body.dark .loc-pill{background:rgba(16,20,27,.9);border-color:var(--border);color:#c7d2df}
+    body.dark .loc-pill svg path{fill:#9fb0c3}
   </style>
 </head>
 <body>
   <header>
     <nav class="nav">
       <div class="brand">Mohammad Areeb Qazi</div>
-      <div class="nav-controls">
+      <div>
+        <a href="#home" class="active">Home</a>
+        <a href="#latest">Latest</a>
         <a href="#about">About</a>
-        <a href="#highlights">Highlights</a>
+        <a href="#research">Research</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <button id="theme-toggle" class="toggle" type="button" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+        <button id="theme-toggle" type="button" aria-label="Toggle theme" style="margin-left:14px; padding:8px 10px; border-radius:10px; border:1px solid var(--border); background:var(--soft); color:var(--text); cursor:pointer">🌙</button>
       </div>
     </nav>
   </header>
 
   <main class="container">
-    <section class="hero" aria-label="Intro">
+    <section id="home" class="hero-wrap" aria-label="Intro">
+      <div class="hero-card">
+        <div class="hero-grid">
       <div>
-        <span class="badge">AI Engineer · Researcher · Dubai/UAE</span>
-        <h1 class="title">I research and build practical AI systems.</h1>
-        <p class="subtitle">MSc (Computer Vision), MBZUAI. AI Engineer at 7X;</p>
-        <div class="cta">
-          <a class="btn" href="#contact">Contact me</a>
-          <a class="btn" href="#projects">See projects</a>
-          <a class="btn" href="resume.pdf" download>Download CV</a>
+            <h1 class="hero-name">Mohammad Areeb Qazi</h1>
+            <div class="hero-role">Researcher in Multimodal Healthcare AI</div>
+            <p class="hero-bio">Researching state‑of‑the‑art AI in multimodal foundation models, clinical imaging + text, and agentic systems for real‑world healthcare.</p>
+            <div class="loc-pill" aria-label="Location">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#64748b" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5Z"/></svg>
+              <span>Currently in UAE · MBZUAI, Abu Dhabi</span>
+            </div>
+          </div>
+          <div class="hero-photo">
+            <img src="./images/MAQ.png" alt="Portrait of Mohammad Areeb Qazi" />
+            <div class="map-card" aria-label="Map">
+              <iframe title="MBZUAI on Google Maps" src="https://www.google.com/maps?q=Mohamed%20bin%20Zayed%20University%20of%20Artificial%20Intelligence&output=embed" width="100%" height="220" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
         </div>
       </div>
-      <div style="justify-self:end">
-        <img class="avatar" src="./images/MAQ.png" alt="Portrait of Mohammad Areeb Qazi" />
-        <div class="socials" aria-label="Social links">
-          <a href="https://www.linkedin.com/in/areebmohammad/" aria-label="LinkedIn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.75 2.63 4.75 6.06V23h-4v-7.4c0-1.76-.03-4.02-2.45-4.02-2.45 0-2.82 1.9-2.82 3.9V23h-4V8z"/></svg>
-          </a>
-          <a href="mailto:mohammadareebqazi@gmail.com" aria-label="Email">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
-          </a>
-          <a href="https://github.com/Areeb2735" aria-label="GitHub">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58V21.5c-3.34.73-4.04-1.6-4.04-1.6-.55-1.39-1.34-1.76-1.34-1.76-1.1-.76.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.39 1.25-3.23-.13-.3-.54-1.52.12-3.17 0 0 1.02-.33 3.35 1.23a11.67 11.67 0 0 1 6.1 0c2.32-1.56 3.34-1.23 3.34-1.23.67 1.65.26 2.87.13 3.17.78.84 1.24 1.92 1.24 3.23 0 4.61-2.8 5.62-5.47 5.92.43.37.81 1.1.81 2.23v3.31c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
-          </a>
-          <a href="https://scholar.google.com/citations?hl=en&user=KeyK8FQAAAAJ&view_op=list_works&sortby=pubdate" aria-label="Google Scholar">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 3 1 10l11 7 4-2.5V20h6V10L12 3Z"/></svg>
-          </a>
+    </section>
+
+    <section id="experience" aria-label="Experience">
+      <h2 class="section-title">Experience</h2>
+      <span class="underline"></span>
+      <div class="projects-grid">
+        <article class="proj" style="grid-column:span 12">
+          <h3>AI Engineer — 7X, UAE</h3>
+          <p class="small">Aug 2024 – Present · Dubai, UAE</p>
+          <ul>
+            <li>Designed a modular multi‑agent system (Tracking, Finding Branch, Knowledge Agents) using Phidata and OSS LLMs to orchestrate complex tasks.</li>
+            <li>Built an address‑parsing engine with RAG to convert raw addresses into structured, geocoded data across Arabic/local formats.</li>
+            <li>R&D for email automation and chatbots leveraging modern LLMs to improve responsiveness and accuracy for the WAYN app.</li>
+          </ul>
+        </article>
+        <article class="proj" style="grid-column:span 12">
+          <h3>Research Associate — MBZUAI</h3>
+          <p class="small">May 2024 – Aug 2024 · Abu Dhabi, UAE</p>
+          <ul>
+            <li>Developed continual learning strategies for VLMs using mixture‑of‑experts for dynamic adaptation.</li>
+            <li>Mitigated catastrophic forgetting while reducing compute requirements.</li>
+          </ul>
+        </article>
+        <article class="proj" style="grid-column:span 12">
+          <h3>Student Researcher (BioMedAI Lab) — MBZUAI</h3>
+          <p class="small">Aug 2022 – May 2024 · Abu Dhabi, UAE</p>
+          <ul>
+            <li>DynaMMo: class‑incremental adapters + post‑hoc merging into a single deployable model.</li>
+            <li>MedMerge: kernel‑level merging to fuse experts from diverse tasks; automated search & evaluation.</li>
+            <li>XReal: controllable diffusion for realistic CXR synthesis with anatomy/pathology control.</li>
+            <li>FissionFusion: geometric checkpoints + model souping for robustness and calibration.</li>
+            <li>SDICE: diversity index for synthetic datasets using contrastive encoders.</li>
+            <li>Multi‑task ultrasound biometrics (ROI detection + measurements) and thesis on efficient CL.</li>
+          </ul>
+        </article>
+        <article class="proj" style="grid-column:span 12">
+          <h3>Summer Research Intern (Computer Vision) — Archireef</h3>
+          <p class="small">May 2023 – Aug 2023 · Abu Dhabi, UAE</p>
+          <ul>
+            <li>Developed coral‑reef segmentation on spatially referenced marine imagery with robust preprocessing.</li>
+            <li>Evaluated on orthomosaics; contributed to ReefSFM integrating CV with geospatial analytics.</li>
+          </ul>
+        </article>
+        <article class="proj" style="grid-column:span 12">
+          <h3>Summer Research Intern — Universiti Teknologi PETRONAS (UTP)</h3>
+          <p class="small">May 2021 – Aug 2021 · Remote, Malaysia</p>
+          <ul>
+            <li>Built deep learning for automated welding defect classification and measurements.</li>
+            <li>Applied augmentation and transfer learning to limited, variable datasets.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="latest" aria-label="Latest">
+      <h2 class="section-title">Latest</h2>
+      <span class="underline"></span>
+      <div class="latest">
+        <div class="latest-card">
+          <div class="latest-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 3L4 14h6l-1 7 9-11h-6l1-7z" fill="#fff"/></svg>
+          </div>
+          <div>
+            <h3>ACM Computing Surveys — Accepted</h3>
+            <p>Our survey on continual learning in medical imaging was accepted to <strong>ACM Computing Surveys (2025)</strong>. Advisors/collaborators include <a href="https://scholar.google.com/citations?user=KeyK8FQAAAAJ&hl=en">co‑authors</a> at MBZUAI and beyond.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="about" aria-label="About">
-      <h2 class="section-title">About</h2>
-      <div class="two-col">
-        <div class="card">
-          <h3>Short bio</h3>
-          <p>AI Researcher focusing on multimodel AI and an Engineer specializing in agents, Retrieval‑Augmented Generation (RAG). Comfortable shipping production prototypes and research.</p>
-          <p class="small">Education: MSc in Computer Vision (MBZUAI); BSc in Computer Science (AMU).</p>
+      <h2 class="section-title">About Me</h2>
+      <span class="underline"></span>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>AI engineer & researcher focused on <strong>multimodal healthcare AI</strong>: foundation models, vision‑language models, agents, and continual learning. I like turning research ideas into working systems.</p>
+          <p>Previously at MBZUAI (MSc, Computer Vision). Building open‑source tools and collaborating with clinical partners to make models useful in practice.</p>
         </div>
-        <div class="card">
-          <h3>Core skills</h3>
-          <p>Python, PyTorch, Transformers, LangChain/Phidata, RAG, Streamlit, Git, VSCode. Soft skills: teamwork, problem‑solving, leadership, research.</p>
-          <div>
-            <span class="tag">AI Agents</span><span class="tag">RAG</span><span class="tag">Vision‑Language</span><span class="tag">Continual Learning</span><span class="tag">Diffusion</span>
+        <div class="about-side">
+          <div class="side-card">
+            <h3 class="side-title">Education</h3>
+            <p class="side-sub">MSc in Computer Vision — MBZUAI (2024) <br/>BSc in Computer Science — AMU</p>
+          </div>
+          <div class="side-card">
+            <h3 class="side-title">Technical Skills</h3>
+            <p class="side-sub">Python, PyTorch, Transformers, RAG, Agents, Diffusion, Model Merging</p>
+          </div>
+          <div class="side-card">
+            <h3 class="side-title">Languages</h3>
+            <p class="side-sub">English · Urdu/Hindi</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="highlights" aria-label="Recent Highlights">
-      <h2 class="section-title">Recent Highlights</h2>
-      <div class="hl-grid">
-        <div class="hl card">
-          <span class="pulse"><span class="pulse-dot"></span> New</span>
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop" alt="Hackathon award podium" />
-          <div>
-            <h3>2nd Place — UAE Hackathon 2025</h3>
-            <p>Won AED 10,000 for an innovation project; led AI design & prototyping.</p>
-          </div>
+    <section id="research" aria-label="Research Interests">
+      <h2 class="section-title">Research Interests</h2>
+      <span class="underline"></span>
+      <div class="interests">
+        <div class="interest">
+          <div class="ibadge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="2"/></svg></div>
+          <h3>Multimodal Learning</h3>
+          <p>Text + imaging for comprehensive clinical understanding and decision support.</p>
         </div>
-        <div class="hl card">
-          <img src="https://images.unsplash.com/photo-1537884944318-390069bb8665?q=80&w=1200&auto=format&fit=crop" alt="Research paper and laptop" />
-          <div>
-            <h3>Continual Learning Survey</h3>
-            <p>Co‑authored a practical survey and benchmark on continual learning in medical imaging (2024).</p>
-          </div>
+        <div class="interest">
+          <div class="ibadge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h16M12 4v16" stroke="#fff" stroke-width="2"/></svg></div>
+          <h3>Foundation/VLMs</h3>
+          <p>Adapting & evaluating foundation models and VLMs for healthcare tasks.</p>
         </div>
-        <div class="hl card">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop" alt="University campus" />
-          <div>
-            <h3>MBZUAI Full Scholarship</h3>
-            <p>Completed MSc (CV) with a fully funded scholarship; GPA 3.67/4.</p>
-          </div>
+        <div class="interest">
+          <div class="ibadge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16v12H4z" fill="#fff"/></svg></div>
+          <h3>Agents</h3>
+          <p>Agentic pipelines for literature, data curation, and clinical workflows.</p>
         </div>
-        <div class="hl card">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Coding on screen" />
-          <div>
-            <h3>Production AI at 7X</h3>
-            <p>Shipped modular multi‑agent system and address‑parsing with RAG for WAYN app.</p>
-          </div>
+        <div class="interest">
+          <div class="ibadge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h18" stroke="#fff" stroke-width="2"/><path d="M6 12a6 6 0 0 0 12 0" stroke="#fff" stroke-width="2"/></svg></div>
+          <h3>Robust/Continual</h3>
+          <p>Shift‑robust and incremental learning for real‑world deployment.</p>
         </div>
-      </div>
-      <p class="small"> </p>
-    </section>
-
-    <section id="experience" aria-label="Experience">
-      <h2 class="section-title">Experience</h2>
-      <div class="card-grid">
-        <article class="card" style="grid-column: span 12;">
-          <h3>AI Engineer — 7X (UAE) · Aug 2024 – Present</h3>
-          <ul>
-            <li>Designed modular multi‑agent system (tracking, finding, knowledge agents) using Phidata & OSS LLMs.</li>
-            <li>Built address‑parsing with RAG + LLM for structured, geocoded outputs across Arabic/local formats.</li>
-            <li>R&D for email automation & chatbots to boost response accuracy and latency for WAYN.</li>
-          </ul>
-        </article>
-        <article class="card" style="grid-column: span 12;">
-          <h3>Research Associate — MBZUAI · May 2024 – Aug 2024</h3>
-          <ul>
-            <li>Mixture‑of‑experts tuning for VLMs; reduced forgetting while cutting compute.</li>
-          </ul>
-        </article>
-        <article class="card" style="grid-column: span 12;">
-          <h3>Student Researcher (BioMedAI Lab) — MBZUAI · Aug 2022 – May 2024</h3>
-          <ul>
-            <li>DynaMMo (class‑incremental adapters + post‑hoc merging), MedMerge (kernel‑level model merging).</li>
-            <li>XReal (controllable diffusion for X‑ray synthesis), FissionFusion (geometric checkpoints + souping).</li>
-            <li>SDICE diversity index; multi‑task ultrasound biometrics; thesis on efficient continual learning.</li>
-          </ul>
-        </article>
-        <article class="card" style="grid-column: span 12;">
-          <h3>CV Intern — Archireef · May 2023 – Aug 2023</h3>
-          <p>Segmentation for coral‑reef monitoring; pipelines robust to geographic variation; ReefSFM integration.</p>
-        </article>
-        <article class="card" style="grid-column: span 12;">
-          <h3>DL Intern — Universiti Teknologi PETRONAS · May 2021 – Aug 2021</h3>
-          <p>Defect classification & measurement in welding images; augmentation & transfer learning.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" aria-label="Projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="card-grid">
-        <article class="card" style="grid-column: span 6;">
-          <h3>Email Automation for WAYN</h3>
-          <p>RAG‑powered email chatbot using OSS LLMs + Groq Cloud for fast inference.</p>
-          <span class="tag">RAG</span><span class="tag">Agents</span><span class="tag">Production</span>
-        </article>
-        <article class="card" style="grid-column: span 6;">
-          <h3>PALM — Prompting in Audio LMs</h3>
-          <p>Novel prompting for audio+language branches; few‑shot performance improvements.</p>
-          <span class="tag">Audio</span><span class="tag">Prompting</span>
-        </article>
-        <article class="card" style="grid-column: span 6;">
-          <h3>DynaMMo</h3>
-          <p>Dynamic model merging for incremental learning in medical images (MIUA 2024).</p>
-          <span class="tag">Continual Learning</span><span class="tag">Model Merging</span>
-        </article>
-        <article class="card" style="grid-column: span 6;">
-          <h3>MedMerge</h3>
-          <p>Merging experts from diverse tasks to boost transfer on new medical tasks (MICCAI 2024).</p>
-          <span class="tag">Model Merging</span><span class="tag">MICCAI</span>
-        </article>
-        <article class="card" style="grid-column: span 6;">
-          <h3>XReal</h3>
-          <p>Controllable diffusion for realistic chest X‑ray synthesis with spatial controls.</p>
-          <span class="tag">Diffusion</span><span class="tag">Medical Imaging</span>
-        </article>
-        <article class="card" style="grid-column: span 6;">
-          <h3>ReefSFM</h3>
-          <p>Coral‑reef segmentation with orthomosaic evaluation; dice ≈60% on test set.</p>
-          <span class="tag">Segmentation</span><span class="tag">Geospatial</span>
-        </article>
       </div>
     </section>
 
     <section id="publications" aria-label="Publications">
-      <h2 class="section-title">Publications (selected)</h2>
-      <div class="card">
-        <ul>
-          <li>Qazi MA <em>et al.</em> Continual Learning in Medical Imaging — Survey & Practical Analysis (2024). <a href="https://arxiv.org/abs/2405.13482">arXiv</a></li>
-          <li>Qazi MA <em>et al.</em> DynaMMo: Dynamic Model Merging for CIL in Medical Images (2024). <a href="https://arxiv.org/pdf/2404.14099">arXiv</a></li>
-          <li>Qazi MA <em>et al.</em> Multi‑task Fetal Ultrasound Biometrics (MICCAD 2023). <a href="https://link.springer.com/chapter/10.1007/978-981-97-1335-6_5">Springer</a></li>
-          <li>Areeb Q.M. <em>et al.</em> Filter Bubbles in Recommenders — WIREs DMKD (2023). <a href="https://doi.org/10.1002/widm.1512">DOI</a></li>
-          <li>Areeb Q.M. <em>et al.</em> AI for Hearing‑Impaired in Emergencies — IEEE Access (2022). <a href="https://doi.org/10.1109/ACCESS.2022.3142918">DOI</a></li>
-        </ul>
+      <h2 class="section-title">Research Publications</h2>
+      <span class="underline"></span>
+      <div class="pubs2">
+        <div class="pubitem">
+          <div class="yearpill">2025</div>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2405.13482" target="_blank" rel="noopener">Continual Learning in Medical Imaging: A Practical Survey and Analysis</a></h3>
+            <p class="meta">Qazi, M. Areeb; Yaqub, M.; Gonzalez, C.; Hashmi, A. U. R.; Sanjeev, S.; Saeed, N.; <em>et al.</em></p>
+            <p class="venue">Accepted — ACM Computing Surveys, 2025. Turin, Italy (venue item for style parity).</p>
+            <p class="desc">Comprehensive study with practical benchmarks and guidance for deploying CL in medical imaging.</p>
+          </div>
+        </div>
+        <div class="pubitem">
+          <div class="yearpill">2024</div>
+          <div>
+            <h3><a href="https://arxiv.org/pdf/2404.14099" target="_blank" rel="noopener">DynaMMo: Dynamic Model Merging for Class‑Incremental Learning in Medical Images</a></h3>
+            <p class="meta">Qazi, M. Areeb; <em>et al.</em></p>
+            <p class="venue">MIUA 2024 (preprint on arXiv).</p>
+            <p class="desc">Proposes dynamic merging of specialists to mitigate forgetting with low compute.</p>
+          </div>
+        </div>
+        <div class="pubitem">
+          <div class="yearpill">2023</div>
+          <div>
+            <h3><a href="https://link.springer.com/chapter/10.1007/978-981-97-1335-6_5" target="_blank" rel="noopener">Multi‑task Fetal Ultrasound Biometrics</a></h3>
+            <p class="meta">Qazi, M. Areeb; <em>et al.</em></p>
+            <p class="venue">MICCAD 2023 (Springer LNCS chapter).</p>
+          </div>
+        </div>
+        <div class="pubitem">
+          <div class="yearpill">2023</div>
+          <div>
+            <h3><a href="https://doi.org/10.1002/widm.1512" target="_blank" rel="noopener">Filter Bubbles in Recommender Systems: Fact or Fallacy — A Systematic Review</a></h3>
+            <p class="meta">Areeb, Q. M.; Nadeem, M.; Sohail, S. S.; Imam, R.; Doctor, F.; Himeur, Y.; Hussain, A.; Amira, A.</p>
+            <p class="venue">WIREs Data Mining and Knowledge Discovery, 2023.</p>
+          </div>
+        </div>
+        <div class="pubitem">
+          <div class="yearpill">2022</div>
+          <div>
+            <h3><a href="https://doi.org/10.1109/ACCESS.2022.3142918" target="_blank" rel="noopener">AI for Hearing‑Impaired Assistance in Emergencies</a></h3>
+            <p class="meta">Areeb, Q. M.; <em>et al.</em></p>
+            <p class="venue">IEEE Access, 2022.</p>
+          </div>
+        </div>
+        <div class="pubitem">
+          <div class="yearpill">2022</div>
+          <div>
+            <h3><a href="https://doi.org/10.1007/978-981-16-8403-6_21" target="_blank" rel="noopener">A Comparative Study of Learning Methods for Diabetic Retinopathy Classification</a></h3>
+            <p class="meta">Areeb, Q. M.; Nadeem, M.</p>
+            <p class="venue">Advances in Data Computing, Communication and Security (I3CS 2021). Springer.</p>
+          </div>
+        </div>
       </div>
     </section>
+
+    <section id="projects" aria-label="Projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <span class="underline"></span>
+      <div class="projects-grid">
+        <article class="proj">
+          <span class="year">2024</span>
+          <h3>DynaMMo</h3>
+          <p>Dynamic model merging for incremental learning in medical images.</p>
+          <div class="chips"><span class="chip">Continual Learning</span><span class="chip">Model Merging</span></div>
+          <p class="small"><a href="https://github.com/BioMedIA-MBZUAI/DynaMMo" target="_blank" rel="noopener">Code</a></p>
+        </article>
+        <article class="proj">
+          <span class="year">2024</span>
+          <h3>MedMerge</h3>
+          <p>Merging experts from diverse tasks to boost transfer on new medical tasks.</p>
+          <div class="chips"><span class="chip">Model Merging</span><span class="chip">MICCAI</span></div>
+          <p class="small"><a href="https://github.com/BioMedIA-MBZUAI/MedMerge" target="_blank" rel="noopener">Code</a></p>
+        </article>
+        <article class="proj">
+          <span class="year">2024</span>
+          <h3>XReal</h3>
+          <p>Realistic anatomy‑ and pathology‑aware chest X‑ray generation with controllable diffusion.</p>
+          <div class="chips"><span class="chip">Diffusion</span><span class="chip">Medical Imaging</span></div>
+          <p class="small"><a href="https://github.com/BioMedIA-MBZUAI/XReal" target="_blank" rel="noopener">Code</a></p>
+        </article>
+        <article class="proj">
+          <span class="year">2023</span>
+          <h3>ReefSFM</h3>
+          <p>Coral‑reef segmentation with evaluation on orthomosaic geospatial imagery (Archireef internship).</p>
+          <div class="chips"><span class="chip">Segmentation</span><span class="chip">Geospatial</span></div>
+          <p class="small"><a href="https://github.com/ArchiCloud/ReefSFM-Segmentation" target="_blank" rel="noopener">Code</a></p>
+        </article>
+        <article class="proj">
+          <span class="year">2023</span>
+          <h3>Biometry Estimation (MICCAD)</h3>
+          <p>Multi‑task fetal ultrasound model: ROI detection and biometric estimation.</p>
+          <div class="chips"><span class="chip">Ultrasound</span><span class="chip">Multi‑task</span></div>
+          <p class="small"><a href="https://github.com/Areeb2735/Biometry-Parameter-Estimation-on-Ultrasound-Images" target="_blank" rel="noopener">Code</a></p>
+        </article>
+        <article class="proj">
+          <span class="year">2021</span>
+          <h3>Hand Gesture Recognition (IEEE Access)</h3>
+          <p>Deep learning for Indian Sign Language emergency gestures; spatial‑temporal modeling.</p>
+          <div class="chips"><span class="chip">CNN</span><span class="chip">LSTM</span><span class="chip">Transfer Learning</span></div>
+        </article>
+      </div>
+    </section>
+
+    
 
     <section id="contact" aria-label="Contact">
-      <h2 class="section-title">Get in touch</h2>
-      <div class="card">
-        <p><strong>Email:</strong> <a href="mailto:mohammadareebqazi@gmail.com">mohammadareebqazi@gmail.com</a> · <strong>Phone:</strong> +971‑506074296</p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/Areeb2735">@Areeb2735</a> · <strong>Scholar:</strong> <a href="https://scholar.google.com/citations?user=KeyK8FQAAAAJ&hl=en">Profile</a></p>
-        <p class="small"></p>
+      <h2 class="section-title">Get In Touch</h2>
+      <span class="underline"></span>
+    
+      <div class="contact-grid">
+        <!-- Left cards -->
+        <div class="contact-left">
+          <div class="contact-card">
+            <div class="c-head">
+              <div class="c-ico" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+              </div>
+              <h3>Email</h3>
+            </div>
+            <p><a href="mailto:mohammadareebqazi@gmail.com">mohammadareebqazi@gmail.com</a></p>
+          </div>
+    
+          <div class="contact-card">
+            <div class="c-head">
+              <div class="c-ico" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5Z"/></svg>
+              </div>
+              <h3>Location</h3>
+            </div>
+            <p>Dubai, UAE · Abu Dhabi (MBZUAI)</p>
+          </div>
+        </div>
+    
+        <!-- Right buttons -->
+        <div class="link-list">
+          <a class="link-tile" href="https://www.linkedin.com/in/areebmohammad/" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.75 2.63 4.75 6.06V23h-4v-7.4c0-1.76-.03-4.02-2.45-4.02-2.45 0-2.82 1.9-2.82 3.9V23h-4V8z"/></svg>
+            </span>
+            <span class="label">LinkedIn</span>
+            <span class="arrow">→</span>
+          </a>
+    
+          <a class="link-tile" href="https://github.com/Areeb2735" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58V21.5c-3.34.73-4.04-1.6-4.04-1.6-.55-1.39-1.34-1.76-1.34-1.76-1.1-.76.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.39 1.25-3.23-.13-.3-.54-1.52.12-3.17 0 0 1.02-.33 3.35 1.23a11.67 11.67 0 0 1 6.1 0c2.32-1.56 3.34-1.23 3.34-1.23.67 1.65.26 2.87.13 3.17.78.84 1.24 1.92 1.24 3.23 0 4.61-2.8 5.62-5.47 5.92.43.37.81 1.1.81 2.23v3.31c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+            </span>
+            <span class="label">GitHub</span>
+            <span class="arrow">→</span>
+          </a>
+    
+          <a class="link-tile" href="https://scholar.google.com/citations?user=KeyK8FQAAAAJ&hl=en" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 3 1 10l11 7 4-2.5V20h6V10L12 3Z"/></svg>
+            </span>
+            <span class="label">Google Scholar</span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
       </div>
     </section>
+    
 
     <footer>
-      <div>© <span id="year"></span> Mohammad Areeb Qazi. Built with vanilla HTML/CSS. Hosted on GitHub Pages.</div>
-      <div class="small">Fast, accessible, single‑file site.</div>
+      <div>© <span id="year"></span> Mohammad Areeb Qazi. All rights reserved.</div>
     </footer>
   </main>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Theme toggle (light/dark)
     (function(){
-      const toggle = document.getElementById('theme-toggle');
-      const stored = localStorage.getItem('theme');
-      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-      if (stored === 'light' || (!stored && prefersLight)) {
-        document.body.classList.add('light');
-        if (toggle) toggle.textContent = '☀️';
+      const btn=document.getElementById('theme-toggle');
+      const stored=localStorage.getItem('theme');
+      const prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if(stored==='dark' || (!stored && prefersDark)){
+        document.body.classList.add('dark');
+        if(btn) btn.textContent='☀️';
       }
-      function apply(next){
-        if (next === 'light') {
-          document.body.classList.add('light');
-          localStorage.setItem('theme', 'light');
-          toggle.textContent = '☀️';
+      function setTheme(next){
+        if(next==='dark'){
+          document.body.classList.add('dark');
+          localStorage.setItem('theme','dark');
+          if(btn) btn.textContent='☀️';
         } else {
-          document.body.classList.remove('light');
-          localStorage.setItem('theme', 'dark');
-          toggle.textContent = '🌙';
+          document.body.classList.remove('dark');
+          localStorage.setItem('theme','light');
+          if(btn) btn.textContent='🌙';
         }
       }
-      if (toggle){
-        toggle.addEventListener('click', function(){
-          const isLight = document.body.classList.contains('light');
-          apply(isLight ? 'dark' : 'light');
-        });
-      }
+      if(btn){ btn.addEventListener('click',()=>{ const isDark=document.body.classList.contains('dark'); setTheme(isDark?'light':'dark'); }); }
     })();
+
+    // Active nav on scroll
+    const links=[...document.querySelectorAll('header .nav a[href^="#"]')];
+    const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const observer=new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        const id = '#'+entry.target.id;
+        const link = links.find(a=>a.getAttribute('href')===id);
+        if(entry.isIntersecting){ links.forEach(a=>a.classList.remove('active')); link&&link.classList.add('active'); }
+      });
+    },{rootMargin:'-60% 0px -35% 0px', threshold:[0,1]});
+    sections.forEach(s=>observer.observe(s));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
