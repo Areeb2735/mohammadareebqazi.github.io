@@ -3,569 +3,333 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mohammad Areeb Qazi — Multimodal Healthcare AI</title>
-  <meta name="description" content="Portfolio of Mohammad Areeb Qazi — Multimodal Healthcare AI researcher and engineer (MBZUAI)." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Mohammad Areeb Qazi — Research Engineer</title>
+  <meta name="description" content="Mohammad Areeb Qazi — Research Engineer working on world models, video generation, and large-scale ML systems." />
   <style>
     :root{
-      --bg:#f7f8fb; --text:#0f172a; --muted:#475569; --soft:#f1f5f9; --border:#e5e7eb; --accent:#6d6af8; --accent-2:#9a95ff; --link:#3b5bdb;
-      --radius:18px; --shadow:0 12px 28px rgba(2,6,23,.08);
-      --accent-glow: rgba(109,106,248,.18);
-      --tile-hover: linear-gradient(180deg, rgba(109,106,248,.12), rgba(109,106,248,.06));
+      --bg:#fff; --text:#494e52; --heading:#2a2e31; --muted:#9ba1a6; --link:#3b8fa8;
+      --border:#f0f1f2; --footer-bg:#f6f7f7; --footer-border:#e1e3e4;
     }
     body.dark{
-      --bg:#0b0f17; --text:#e6edf3; --muted:#9fb0c3; --soft:#0f1725; --border:rgba(255,255,255,.12); --accent:#6ab0ff; --accent-2:#9bffd1; --link:#9bbcff;
-      --shadow:0 14px 34px rgba(0,0,0,.4);
-      --accent-glow: rgba(106,176,255,.22);
-      --tile-hover: linear-gradient(180deg, rgba(106,176,255,.12), rgba(106,176,255,.06));
+      --bg:#15181b; --text:#c2c7cb; --heading:#eef0f1; --muted:#7b8288; --link:#6fc3de;
+      --border:#262a2d; --footer-bg:#1b1f22; --footer-border:#2a2e31;
     }
     *{box-sizing:border-box}
-    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.6}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text); line-height:1.6}
-    a{color:var(--link)} a:hover{text-decoration:underline}
-    /* layout */
-    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px); background: rgba(255,255,255,.75); border-bottom:1px solid var(--border)}
-    .nav{max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px}
-    .brand{font-weight:800; letter-spacing:.2px}
-    .nav a{color:var(--text); opacity:.85; margin-left:18px; text-decoration:none}
-    .nav a.active{color:var(--accent); font-weight:600}
-    .container{max-width:1080px; margin:0 auto; padding:28px 20px}
-    section{scroll-margin-top:80px}
-    /* hero */
-    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center; padding:36px 0 18px}
-    .title{font-size:clamp(28px,4.5vw,48px); line-height:1.1; margin:8px 0 10px; font-weight:800; letter-spacing:-.02em}
-    .subtitle{color:var(--muted)}
-    .badge{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--border); border-radius:999px; background:var(--soft); color:var(--muted); font-size:12px}
-    .cta{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid var(--border); background:linear-gradient(180deg, #fff, #f8fafc); box-shadow:var(--shadow); color:var(--text); text-decoration:none}
-    .btn.primary{background:linear-gradient(180deg, rgba(37,99,235,.12), rgba(37,99,235,.06)); border-color:rgba(37,99,235,.35); color:#0b1a3a}
-    .avatar{inline-size:180px; block-size:180px; border-radius:16px; object-fit:cover; border:1px solid var(--border); box-shadow:var(--shadow)}
-    .socials{display:flex; gap:10px; margin-top:8px}
-    .socials a{display:inline-flex; padding:9px; border-radius:12px; border:1px solid var(--border); background:var(--soft)}
-    /* sections */
-    .section-title{font-size:28px; font-weight:800; margin:40px 0 8px; letter-spacing:.2px; text-align:center}
-    .section-title + .underline{display:block; width:72px; height:4px; border-radius:999px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); margin:8px auto 24px; opacity:.9}
-    .two-col{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-    .card{background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow)}
-    .small{font-size:13px; color:var(--muted)}
-    /* latest card */
-    .latest{display:grid; gap:18px; max-width:980px; margin:0 auto}
-    .latest-card{display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid var(--border); border-radius:20px; padding:18px 20px; box-shadow:var(--shadow)}
-    .latest-icon{width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff; flex:0 0 auto; background:linear-gradient(135deg,#6d6af8,#9a95ff)}
-    .latest h3{margin:0 0 6px; font-size:20px}
-    .latest p{margin:0; color:var(--muted)}
-
-    /* about side cards */
-    .about-grid{display:grid; grid-template-columns:2fr 1fr; gap:22px}
-    .about-text{background:#fff; border:1px solid var(--border); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)}
-    .about-side{display:grid; gap:16px}
-    .side-card{background:#fff; border:1px solid var(--border); border-radius:16px; padding:16px 16px 16px 18px; box-shadow:var(--shadow); position:relative}
-    .side-card:before{content:""; position:absolute; inset:0 auto 0 0; width:6px; border-radius:16px 0 0 16px; background:linear-gradient(180deg,#6d6af8,#9a95ff)}
-    .side-title{margin:0 0 6px; font-weight:700}
-    .side-sub{margin:0; color:var(--muted)}
-
-    /* interests cards */
-    .interests{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
-    .interest{grid-column:span 4; background:#fff; border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
-    .interest .ibadge{width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#6d6af8,#9a95ff); color:#fff; margin-bottom:10px}
-    .interest h3{margin:0 0 6px; font-size:18px}
-    .interest p{margin:0; color:var(--muted)}
-    @media (max-width:900px){ .interest{grid-column:span 12} }
-
-    /* pubs timeline style */
-    .pubs2{display:grid; gap:18px; max-width:1080px; margin:0 auto}
-    .pubitem{display:grid; grid-template-columns:80px 1fr; gap:16px; background:#fff; border:1px solid var(--border); border-radius:18px; padding:16px; box-shadow:var(--shadow)}
-    .yearpill{align-self:flex-start; background:linear-gradient(135deg,#6d6af8,#9a95ff); color:#fff; font-weight:700; border-radius:12px; padding:10px 12px; text-align:center}
-    .pubitem h3{margin:0 0 6px; font-size:18px}
-    .pubitem .meta{margin:0; color:#3b5bdb; font-weight:600}
-    .pubitem .venue{margin:6px 0 0; color:var(--muted); font-style:italic}
-    .pubitem .desc{margin:10px 0 0; color:var(--muted)}
-
-    /* project cards */
-    .projects-grid{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
-    .proj{grid-column:span 4; background:#fff; border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
-    .proj .year{float:right; background:rgba(109,106,248,.12); color:#312e81; padding:6px 10px; border-radius:999px; font-size:12px}
-    .proj h3{margin:0 0 6px}
-    .proj p{margin:0 0 8px; color:var(--muted)}
-    .chips .chip{display:inline-block; padding:4px 8px; font-size:12px; border-radius:999px; background:#f3f4ff; color:#4545a5; margin:4px 6px 0 0; border:1px solid #e9e8ff}
-    @media (max-width:900px){ .proj{grid-column:span 12} }
-
-    /* contact grid */
-    .contact-grid{display:grid; grid-template-columns:2fr 1fr; gap:18px}
-    .contact-left{display:grid; gap:16px}
-    .contact-card{background:#fff; border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow); position:relative}
-    .contact-card:before{content:""; position:absolute; left:0; top:0; bottom:0; width:6px; border-radius:18px 0 0 18px; background:linear-gradient(180deg,#6d6af8,#9a95ff)}
-    .c-head{display:flex; align-items:center; gap:10px; margin:0 0 8px}
-    .c-ico{width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#fff}
-
-    .link-list{display:grid; gap:14px}
-    .link-tile{display:flex; align-items:center; gap:12px; padding:16px 18px; border-radius:20px; border:1px solid var(--border); background:var(--soft);
-      text-decoration:none; color:var(--text); transition:border-color .2s, background .2s, box-shadow .2s, transform .08s}
-    .link-tile .icon{width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#fff; flex:0 0 auto}
-    .link-tile .label{font-weight:600}
-    .link-tile .arrow{margin-left:auto; opacity:.75}
-    .link-tile:hover{border-color:var(--accent); background:var(--tile-hover); box-shadow:0 8px 24px var(--accent-glow); transform:translateY(-1px)}
-
-
-    /* existing hl grid keep */
-    .hl-grid{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
-    .hl{grid-column:span 6; display:grid; grid-template-rows:auto 1fr; gap:10px}
-    .hl img{width:100%; height:180px; object-fit:cover; border-radius:12px; border:1px solid var(--border)}
-    /* research interests */
-    .pill{display:inline-block; padding:6px 10px; background:var(--soft); border:1px solid var(--border); border-radius:999px; margin:6px 8px 0 0; font-size:12px; color:var(--muted)}
-    /* pubs */
-    .pubs{display:grid; gap:24px}
-    .pub-year{font-weight:800; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; font-size:14px}
-    .pub-list{display:grid; gap:12px}
-    .pub{border-left:3px solid var(--accent); padding:10px 12px; background:linear-gradient(180deg,#fff,#f8fafc); border-radius:10px; border:1px solid var(--border)}
-    .pub h3{margin:0 0 6px; font-size:16px}
-    .pub .meta{color:var(--muted); margin:0 0 3px}
-    .tags{margin-top:6px}
-    .tag{display:inline-block; font-size:12px; padding:4px 8px; border:1px solid var(--border); border-radius:999px; background:var(--soft); color:var(--muted); margin-right:6px}
-    /* projects */
-    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
-    .col-6{grid-column:span 6}
-    .col-12{grid-column:span 12}
-    /* footer */
-    footer{color:var(--muted); padding:40px 0 60px; text-align:center}
-    @media (max-width:900px){ .hero{grid-template-columns:1fr} .two-col{grid-template-columns:1fr} .hl{grid-column:span 12} .col-6{grid-column:span 12} }
     html{scroll-behavior:smooth}
-      /* --- Hero v2 (photo + map + pill) --- */
-    .hero-wrap{margin-top:12px}
-    .hero-card{position:relative;background:radial-gradient(1200px 600px at -10% -20%, rgba(99,102,241,.18), transparent 40%),radial-gradient(900px 500px at 120% 10%, rgba(147,197,253,.18), transparent 45%),linear-gradient(180deg,#f6f7ff,#eef1ff);border:1px solid var(--border);border-radius:28px;padding:34px;box-shadow:var(--shadow)}
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
-    .hero-name{font-size:clamp(34px,6vw,56px);font-weight:800;color:#5b6fd6;letter-spacing:-.02em;margin:0 0 6px}
-    .hero-role{font-size:clamp(18px,2.5vw,24px);font-weight:700;color:#6b7dfb;margin:0 0 12px}
-    .hero-bio{color:#475569;max-width:60ch}
-    .loc-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(255,255,255,.7);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);color:var(--muted);margin-top:18px}
-    .loc-pill svg{flex:0 0 auto}
-    .hero-photo{justify-self:end;display:flex;flex-direction:column;align-items:center}
-    .hero-photo img{width:210px;height:210px;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:0 20px 60px rgba(31,41,55,.25);margin-bottom:12px}
-    .map-card{margin-top:16px;width:360px;max-width:100%;border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);background:#fff}
-    /* --- Dark theme component overrides --- */
-    body.dark header{background:rgba(10,12,16,.7);border-bottom:1px solid var(--border)}
-    body.dark .nav a{color:var(--text)}
-    body.dark .badge{background:#10141b;border-color:var(--border);color:var(--muted)}
-    body.dark .card,
-    body.dark .about-text,
-    body.dark .side-card,
-    body.dark .interest,
-    body.dark .pubitem,
-    body.dark .proj,
-    body.dark .contact-card,
-    body.dark .link-tile,
-    body.dark .latest-card,
-    body.dark .map-card{background:#0f1725;border:1px solid var(--border);box-shadow:0 10px 28px rgba(0,0,0,.45)}
-    body.dark .link-tile{background:#0c121c}
-    body.dark .projects-grid .proj .year{background:rgba(235,64,52,.18);color:#ffb4ae}
-    body.dark .chips .chip{background:#1a2230;color:#c3d3ff;border:1px solid #1f2a3a}
-    body.dark .latest-icon{background:linear-gradient(135deg,#7c3aed,#ef4444)}
-    body.dark .hero-card{background:radial-gradient(1200px 600px at -10% -20%, rgba(124,58,237,.22), transparent 40%),radial-gradient(900px 500px at 120% 10%, rgba(239,68,68,.12), transparent 45%),linear-gradient(180deg,#14122a,#1a1633);border-color:var(--border)}
-    /* Typography in dark: headings white, body muted */
-    body.dark h1, body.dark h2, body.dark h3, body.dark .brand{color:#ffffff}
-    body.dark p, body.dark li, body.dark .small, body.dark .subtitle{color:#b9c6d2}
-    /* Media bits */
-    body.dark .hero-photo img{border-color:#0f0f0f; box-shadow:0 16px 50px rgba(0,0,0,.6)}
-    /* Ensure pill visible in dark */
-    body.dark .loc-pill{background:rgba(16,20,27,.9);border-color:var(--border);color:#c7d2df}
-    body.dark .loc-pill svg path{fill:#9fb0c3}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+      line-height:1.6; font-size:16px;
+    }
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+    h1,h2,h3{color:var(--heading); font-weight:600}
+    .muted{color:var(--muted)}
+    .small{font-size:14px}
+
+    /* masthead */
+    .masthead{border-bottom:1px solid var(--border)}
+    .masthead-wrap{max-width:1000px; margin:0 auto; padding:18px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px 20px}
+    .brand{font-weight:700; color:var(--heading); font-size:15px}
+    .masthead-nav{display:flex; flex-wrap:wrap; gap:4px 22px; font-size:14px}
+    .masthead-nav a{color:var(--text)}
+    .masthead-nav a:hover{color:var(--heading); text-decoration:none; border-bottom:1px solid var(--heading)}
+    #theme-toggle{border:1px solid var(--border); background:none; color:var(--text); border-radius:4px; padding:3px 8px; cursor:pointer; font-size:13px}
+
+    /* two-column page */
+    .page{max-width:1000px; margin:0 auto; padding:40px 24px 20px; display:flex; gap:48px; align-items:flex-start}
+    .sidebar{width:230px; flex:0 0 auto; position:sticky; top:24px}
+    .content{flex:1 1 auto; min-width:0}
+
+    .avatar{width:110px; height:110px; border-radius:50%; object-fit:cover; display:block}
+    .author-name{margin:16px 0 4px; font-size:19px}
+    .author-role{margin:0 0 14px; font-size:14px; line-height:1.5}
+    .author-loc{margin:0 0 16px; font-size:13px}
+    .author-links{display:grid; gap:8px; font-size:14px}
+    .author-links a{display:flex; align-items:center; gap:8px; color:var(--text)}
+    .author-links a:hover{color:var(--link); text-decoration:none}
+    .author-links svg{flex:0 0 auto}
+
+    /* content sections */
+    .content section{margin-bottom:44px}
+    .content h2{font-size:13px; text-transform:uppercase; letter-spacing:.08em; margin:0 0 20px; padding-bottom:8px; border-bottom:1px solid var(--border)}
+    .content p{margin:0 0 12px}
+    .content ul{margin:6px 0 0; padding-left:20px}
+    .content li{margin:0 0 5px}
+
+    .news-item{margin:0 0 10px; font-size:14.5px}
+    .news-date{color:var(--muted); font-size:13px; margin-right:6px}
+
+    .entry{margin:0 0 22px}
+    .entry:last-child{margin-bottom:0}
+    .entry-head{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:2px 12px}
+    .entry-title{font-weight:600; color:var(--heading)}
+    .entry-org{margin:1px 0 6px; font-size:14px}
+    .entry ul{font-size:14.5px}
+
+    .pub-item, .proj-item{margin:0 0 16px}
+    .pub-item:last-child, .proj-item:last-child{margin-bottom:0}
+    .pub-title{font-weight:600}
+    .pub-meta, .pub-venue{font-size:13.5px; margin:2px 0 0}
+    .proj-tag{font-size:12px; color:var(--muted)}
+
+    footer{background:var(--footer-bg); border-top:1px solid var(--footer-border); color:var(--muted); font-size:13px; text-align:center; padding:20px 24px; margin-top:20px}
+
+    @media (max-width:760px){
+      .page{flex-direction:column; gap:28px}
+      .sidebar{width:100%; position:static}
+      .author-links{grid-auto-flow:column; grid-auto-columns:max-content}
+    }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
+  <div class="masthead">
+    <div class="masthead-wrap">
       <div class="brand">Mohammad Areeb Qazi</div>
-      <div>
-        <a href="#home" class="active">Home</a>
-        <a href="#latest">Latest</a>
+      <nav class="masthead-nav">
         <a href="#about">About</a>
-        <a href="#research">Research</a>
+        <a href="#news">News</a>
         <a href="#experience">Experience</a>
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <button id="theme-toggle" type="button" aria-label="Toggle theme" style="margin-left:14px; padding:8px 10px; border-radius:10px; border:1px solid var(--border); background:var(--soft); color:var(--text); cursor:pointer">🌙</button>
-      </div>
-    </nav>
-  </header>
+        <a href="#awards">Awards</a>
+        <button id="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </div>
 
-  <main class="container">
-    <section id="home" class="hero-wrap" aria-label="Intro">
-      <div class="hero-card">
-        <div class="hero-grid">
-      <div>
-            <h1 class="hero-name">Mohammad Areeb Qazi</h1>
-            <div class="hero-role">Researcher at Institute of Foundation Models</div>
-            <p class="hero-bio">Researching state‑of‑the‑art AI in multimodal foundation models, world models, clinical imaging + text, and agentic systems for real‑world healthcare.</p>
-            <div class="loc-pill" aria-label="Location">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#64748b" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5Z"/></svg>
-              <span>Currently in UAE · Institute of Foundation Models, Abu Dhabi</span>
-            </div>
-          </div>
-          <div class="hero-photo">
-            <img src="./images/MAQ.png" alt="Portrait of Mohammad Areeb Qazi" />
-            <div class="map-card" aria-label="Map">
-              <iframe title="MBZUAI on Google Maps" src="https://www.google.com/maps?q=Mohamed%20bin%20Zayed%20University%20of%20Artificial%20Intelligence&output=embed" width="100%" height="220" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-        </div>
+  <div class="page">
+    <aside class="sidebar">
+      <img class="avatar" src="./images/MAQ.png" alt="Mohammad Areeb Qazi" />
+      <h1 class="author-name">Mohammad Areeb Qazi</h1>
+      <p class="author-role muted">Research Engineer — Video Generation, World Models &amp; Large-Scale ML Systems</p>
+      <p class="author-loc muted">📍 Abu Dhabi, United Arab Emirates</p>
+      <div class="author-links">
+        <a href="mailto:mohammadareebqazi@gmail.com">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z" fill="#8a9096"/></svg>
+          Email
+        </a>
+        <a href="https://github.com/Areeb2735" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58V21.5c-3.34.73-4.04-1.6-4.04-1.6-.55-1.39-1.34-1.76-1.34-1.76-1.1-.76.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.39 1.25-3.23-.13-.3-.54-1.52.12-3.17 0 0 1.02-.33 3.35 1.23a11.67 11.67 0 0 1 6.1 0c2.32-1.56 3.34-1.23 3.34-1.23.67 1.65.26 2.87.13 3.17.78.84 1.24 1.92 1.24 3.23 0 4.61-2.8 5.62-5.47 5.92.43.37.81 1.1.81 2.23v3.31c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" fill="#171516"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/areebmohammad/" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.75 2.63 4.75 6.06V23h-4v-7.4c0-1.76-.03-4.02-2.45-4.02-2.45 0-2.82 1.9-2.82 3.9V23h-4V8z" fill="#007bb6"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://scholar.google.com/citations?user=KeyK8FQAAAAJ&hl=en" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3 1 10l11 7 4-2.5V20h6V10L12 3Z" fill="#4285f4"/></svg>
+          Google Scholar
+        </a>
+        <a href="./resume_areeb.pdf" download="Mohammad_Areeb_Qazi_Resume.pdf">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z" stroke="#8a9096" stroke-width="1.6"/><path d="M14 2v6h6" stroke="#8a9096" stroke-width="1.6"/></svg>
+          Resume (PDF)
+        </a>
       </div>
-    </section>
+    </aside>
 
-    <section id="experience" aria-label="Experience">
-      <h2 class="section-title">Experience</h2>
-      <span class="underline"></span>
-      <div class="projects-grid">
-        <article class="proj" style="grid-column:span 12">
-          <h3>Research Engineer — Institute of Foundation Models</h3>
-          <p class="small">Present · UAE</p>
+    <main class="content">
+      <section id="about">
+        <h2>About</h2>
+        <p>I'm a research engineer working on world models, video generation, and large-scale multimodal ML systems — currently building the pre-training data pipeline for a video-based world model at the Institute of Foundation Models. My background spans diffusion transformers, vision-language models, model merging, and continual learning, applied to real deployed systems ranging from healthcare imaging to production logistics AI.</p>
+        <p>I hold an MSc in Computer Vision from MBZUAI (fully funded, GPA 3.67/4) and a BSc in Computer Science from Aligarh Muslim University (CPI 8.72/10).</p>
+        <p class="small"><strong>Research interests:</strong> World models, video generation, diffusion transformers (DiT), multimodal foundation models, large-scale data curation &amp; filtering, continual learning, model merging, efficient fine-tuning.</p>
+        <p class="small"><strong>Skills:</strong> PyTorch, Transformers, Diffusers, DiT, LoRA/PEFT, distributed training (FSDP, DeepSpeed), GPU cluster management, model quantization/pruning/distillation, LangChain, CrewAI, RAG pipelines, Python, C++, Docker.</p>
+      </section>
+
+      <section id="news">
+        <h2>News</h2>
+        <p class="news-item"><span class="news-date">2025</span>Started as Research Engineer at the Institute of Foundation Models, working on the PAN V2 world model.</p>
+        <p class="news-item"><span class="news-date">2025</span>Granted the UAE Golden Visa in recognition of professional achievements in AI engineering and research.</p>
+        <p class="news-item"><span class="news-date">2025</span>Our survey, <em>Continual Learning in Medical Imaging from Theory to Practice</em>, was accepted to ACM Computing Surveys.</p>
+        <p class="news-item"><span class="news-date">2025</span>Won 2nd place at UAE Hackathon 2025 (AED 10,000 prize).</p>
+        <p class="news-item"><span class="news-date">2025</span>Received the Best Presentation Award at the AI Pioneers Program (TDRA × NUS).</p>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Research Engineer</span>
+            <span class="small muted">Nov 2025 – Present</span>
+          </div>
+          <p class="entry-org muted">The Institute of Foundation Models, UAE · Abu Dhabi</p>
           <ul>
-            <li>Research and development of world models.</li>
+            <li>Conducted architectural research on video diffusion models (LTX-Video, LTX-2) — inference pipelines, video VAE design, causal convolutions, RoPE-based 3D positional encoding — to inform pre-training data and pipeline requirements for the PAN V2 world model.</li>
+            <li>Designed and built the end-to-end pre-training data pipeline for PAN V2: large-scale multimodal video ingestion, cleaning, filtering, and transformation across distributed infrastructure.</li>
+            <li>Engineered scalable preprocessing workflows — frame extraction, temporal sampling, bucketed resolution/frame-rate batching, metadata alignment, multimodal synchronization — optimizing distributed data processing across GPU clusters to cut preprocessing bottlenecks and raise training throughput.</li>
+            <li>Defined dataset curation and quality-validation criteria (temporal coherence, diversity, robustness) for self-supervised world model learning.</li>
+            <li>Supported large-scale training runs — debugging, profiling, compute utilization — and built interactive demos for the PAN V1 world model and PAN Game Model for stakeholder evaluation.</li>
           </ul>
-        </article>
-        <article class="proj" style="grid-column:span 12">
-          <h3>AI Engineer — 7X, UAE</h3>
-          <p class="small">Aug 2024 – Nov 2025 · Dubai, UAE</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">AI Engineer</span>
+            <span class="small muted">Aug 2024 – Oct 2025</span>
+          </div>
+          <p class="entry-org muted">Emirates Post (7X), UAE · Dubai</p>
           <ul>
-            <li>Designed a modular multi‑agent system (Tracking, Finding Branch, Knowledge Agents) using Phidata and OSS LLMs to orchestrate complex tasks.</li>
-            <li>Built an address‑parsing engine with RAG to convert raw addresses into structured, geocoded data across Arabic/local formats.</li>
-            <li>R&D for email automation and chatbots leveraging modern LLMs to improve responsiveness and accuracy for the WAYN app.</li>
+            <li>Designed an address-parsing data pipeline using a RAG framework, converting raw UAE address inputs (including Arabic script) into structured, geocoded data at production scale.</li>
+            <li>Led design and development of a modular multi-agent AI system using open-source LLMs, with specialized agents (Tracking, Finding Branch, Knowledge) for complex logistics tasks.</li>
+            <li>Conducted R&amp;D for LLM-based email automation and chatbot solutions, improving real-time responsiveness for the WAYN app.</li>
           </ul>
-        </article>
-        <article class="proj" style="grid-column:span 12">
-          <h3>Research Associate — MBZUAI</h3>
-          <p class="small">May 2024 – Aug 2024 · Abu Dhabi, UAE</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Research Associate</span>
+            <span class="small muted">May 2024 – Aug 2024</span>
+          </div>
+          <p class="entry-org muted">Mohamed Bin Zayed University of Artificial Intelligence · Abu Dhabi</p>
           <ul>
-            <li>Developed continual learning strategies for VLMs using mixture‑of‑experts for dynamic adaptation.</li>
-            <li>Mitigated catastrophic forgetting while reducing compute requirements.</li>
+            <li>Developed continual learning strategies for vision-language models using a mixture-of-experts approach to dynamically fine-tune pre-trained networks while reducing computational overhead.</li>
+            <li>Designed a framework to mitigate catastrophic forgetting, enhancing model adaptability across sequential tasks.</li>
           </ul>
-        </article>
-        <article class="proj" style="grid-column:span 12">
-          <h3>Student Researcher (BioMedAI Lab) — MBZUAI</h3>
-          <p class="small">Aug 2022 – May 2024 · Abu Dhabi, UAE</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Student Researcher, BioMedAI Lab</span>
+            <span class="small muted">Aug 2022 – May 2024</span>
+          </div>
+          <p class="entry-org muted">Mohamed Bin Zayed University of Artificial Intelligence · Abu Dhabi</p>
           <ul>
-            <li>DynaMMo: class‑incremental adapters + post‑hoc merging into a single deployable model.</li>
-            <li>MedMerge: kernel‑level merging to fuse experts from diverse tasks; automated search & evaluation.</li>
-            <li>XReal: controllable diffusion for realistic CXR synthesis with anatomy/pathology control.</li>
-            <li>FissionFusion: geometric checkpoints + model souping for robustness and calibration.</li>
-            <li>SDICE: diversity index for synthetic datasets using contrastive encoders.</li>
-            <li>Multi‑task ultrasound biometrics (ROI detection + measurements) and thesis on efficient CL.</li>
+            <li>Designed DynaMMo (class-incremental learning via lightweight task adapters, merged post-hoc) and MedMerge (kernel-level model merging with automated merge-weight search).</li>
+            <li>Co-created XReal, a controllable diffusion workflow for synthetic chest X-ray generation, and SDICE, a diversity index for evaluating synthetic medical datasets.</li>
+            <li>Led a practical survey and benchmark of continual learning in medical imaging, standardizing data protocols and evaluation practices.</li>
+            <li>Developed a multi-task ultrasound model (U-Net + classification/regression heads) for joint ROI detection and fetal biometric estimation — 1.08mm MAE on head circumference.</li>
+            <li>Collaborated across a 5–8 person team of researchers, clinicians, and annotators on data protocols and multiple 2024 publications.</li>
           </ul>
-        </article>
-        <article class="proj" style="grid-column:span 12">
-          <h3>Summer Research Intern (Computer Vision) — Archireef</h3>
-          <p class="small">May 2023 – Aug 2023 · Abu Dhabi, UAE</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Summer Research Intern, Computer Vision</span>
+            <span class="small muted">May 2023 – Aug 2023</span>
+          </div>
+          <p class="entry-org muted">Archireef, UAE · Abu Dhabi</p>
           <ul>
-            <li>Developed coral‑reef segmentation on spatially referenced marine imagery with robust preprocessing.</li>
-            <li>Evaluated on orthomosaics; contributed to ReefSFM integrating CV with geospatial analytics.</li>
+            <li>Developed and evaluated segmentation models on spatially referenced marine imagery — 60% Dice on orthomosaic test sets.</li>
+            <li>Enhanced preprocessing pipelines under variable geographic and environmental conditions, integrating computer vision with geospatial analytics for the ReefSFM project.</li>
           </ul>
-        </article>
-        <article class="proj" style="grid-column:span 12">
-          <h3>Summer Research Intern — Universiti Teknologi PETRONAS (UTP)</h3>
-          <p class="small">May 2021 – Aug 2021 · Remote, Malaysia</p>
-          <ul>
-            <li>Built deep learning for automated welding defect classification and measurements.</li>
-            <li>Applied augmentation and transfer learning to limited, variable datasets.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <section id="latest" aria-label="Latest">
-      <h2 class="section-title">Latest</h2>
-      <span class="underline"></span>
-      <div class="latest">
-        <div class="latest-card">
-          <div class="latest-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l2.39 4.84L20 8l-4 3.9L17 18l-5-2.6L7 18l1-6.1L4 8l5.61-1.16L12 2z" fill="#fff"/></svg>
-          </div>
-          <div>
-            <h3>UAE Golden Visa — Granted</h3>
-            <p>Recently awarded the <strong>UAE Golden Visa</strong> in recognition of professional achievements and contributions to AI engineering and research.</p>
-          </div>
-        </div>
-        <div class="latest-card">
-          <div class="latest-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 3L4 14h6l-1 7 9-11h-6l1-7z" fill="#fff"/></svg>
-          </div>
-          <div>
-            <h3>ACM Computing Surveys — Accepted</h3>
-            <p>Our survey on continual learning in medical imaging was accepted to <strong>ACM Computing Surveys (2025)</strong>. Advisors/collaborators include <a href="https://scholar.google.com/citations?user=KeyK8FQAAAAJ&hl=en">co‑authors</a> at MBZUAI and beyond.</p>
-          </div>
-        </div>
-        <div class="latest-card">
-          <div class="latest-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 4h14a2 2 0 0 1 2 2v12l-4-2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff"/></svg>
-          </div>
-          <div>
-            <h3>AI Pioneers Program — Best Presentation Award</h3>
-            <p>Completed the Artificial Intelligence Pioneers Program (TDRA × NUS) and won the <strong>Best Presentation Award</strong>. Read more on LinkedIn: <a href="https://www.linkedin.com/posts/areebmohammad_ai-generativeai-digitalgovernment-activity-7371861667548217344-dQxb?utm_source=share&utm_medium=member_desktop&rcm=ACoAADApoQEBFKU2ZXu4LI68DQtEaMjixsJC13Q" target="_blank" rel="noopener">post</a>.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      <section id="publications">
+        <h2>Publications</h2>
 
-    <section id="about" aria-label="About">
-      <h2 class="section-title">About Me</h2>
-      <span class="underline"></span>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>AI engineer & researcher focused on <strong>multimodal healthcare AI</strong>: foundation models, vision‑language models, agents, and continual learning. I like turning research ideas into working systems.</p>
-          <p>Previously at MBZUAI (MSc, Computer Vision). Building open‑source tools and collaborating with clinical partners to make models useful in practice.</p>
+        <div class="pub-item">
+          <p class="pub-title"><a href="https://arxiv.org/abs/2405.13482" target="_blank" rel="noopener">Continual Learning in Medical Imaging from Theory to Practice: A Survey and Practical Analysis</a></p>
+          <p class="pub-meta muted">Qazi, M. Areeb, et al.</p>
+          <p class="pub-venue muted"><em>Accepted — ACM Computing Surveys, 2025</em></p>
         </div>
-        <div class="about-side">
-          <div class="side-card">
-            <h3 class="side-title">Education</h3>
-            <p class="side-sub">MSc in Computer Vision — MBZUAI (2024) <br/>BSc in Computer Science — AMU</p>
-          </div>
-          <div class="side-card">
-            <h3 class="side-title">Technical Skills</h3>
-            <p class="side-sub">Python, PyTorch, Transformers, RAG, Agents, Diffusion, Model Merging</p>
-          </div>
-          <div class="side-card">
-            <h3 class="side-title">Languages</h3>
-            <p class="side-sub">English · Urdu/Hindi</p>
-          </div>
+        <div class="pub-item">
+          <p class="pub-title"><a href="https://arxiv.org/abs/2404.14099" target="_blank" rel="noopener">DynaMMo: Dynamic Model Merging for Efficient Class Incremental Learning for Medical Images</a></p>
+          <p class="pub-meta muted">Qazi, M. Areeb, et al.</p>
+          <p class="pub-venue muted"><em>MIUA, 2024</em></p>
         </div>
-      </div>
-    </section>
+        <div class="pub-item">
+          <p class="pub-title"><a href="https://arxiv.org/abs/2409.19806" target="_blank" rel="noopener">PALM: Few-Shot Prompt Learning for Audio Language Models</a></p>
+          <p class="pub-meta muted">Hanif, A.; Agro, M. T.; Qazi, M. Areeb; Aldarmaki, H.</p>
+          <p class="pub-venue muted"><em>EMNLP, 2024</em></p>
+        </div>
+        <div class="pub-item">
+          <p class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-981-97-1335-6_5" target="_blank" rel="noopener">Multi-task Learning Approach for Unified Biometric Estimation from Fetal Ultrasound Anomaly Scans</a></p>
+          <p class="pub-meta muted">Qazi, M. Areeb, et al.</p>
+          <p class="pub-venue muted"><em>MICCAD, Springer, 2023</em></p>
+        </div>
+        <div class="pub-item">
+          <p class="pub-title"><a href="https://doi.org/10.1002/widm.1512" target="_blank" rel="noopener">Filter Bubbles in Recommender Systems: Fact or Fallacy — A Systematic Review</a></p>
+          <p class="pub-meta muted">Areeb, Q. M.; Nadeem, M.; Sohail, S. S.; Imam, R.; Doctor, F.; Himeur, Y.; Hussain, A.; Amira, A.</p>
+          <p class="pub-venue muted"><em>WIREs Data Mining and Knowledge Discovery, 2023</em></p>
+        </div>
+        <div class="pub-item">
+          <p class="pub-title"><a href="https://doi.org/10.1109/ACCESS.2022.3142918" target="_blank" rel="noopener">Helping Hearing-Impaired in Emergency Situations: A Deep Learning-Based Approach</a></p>
+          <p class="pub-meta muted">Areeb, Q. M.; Nadeem, M.; Alroobaea, R.; Anwer, F.</p>
+          <p class="pub-venue muted"><em>IEEE Access, 2022</em></p>
+        </div>
+        <div class="pub-item">
+          <p class="pub-title"><a href="https://doi.org/10.1007/978-981-16-8403-6_21" target="_blank" rel="noopener">A Comparative Study of Learning Methods for Diabetic Retinopathy Classification</a></p>
+          <p class="pub-meta muted">Areeb, Q. M.; Nadeem, M.</p>
+          <p class="pub-venue muted"><em>I3CS, Springer, 2022</em></p>
+        </div>
+      </section>
 
-    <section id="research" aria-label="Research Interests">
-      <h2 class="section-title">Research Interests</h2>
-      <span class="underline"></span>
-      <div class="interests">
-        <div class="interest">
-          <div class="ibadge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="2"/></svg></div>
-          <h3>Multimodal Learning</h3>
-          <p>Text + imaging for comprehensive clinical understanding and decision support.</p>
-        </div>
-        <div class="interest">
-          <div class="ibadge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12h16M12 4v16" stroke="#fff" stroke-width="2"/></svg></div>
-          <h3>Foundation/VLMs</h3>
-          <p>Adapting & evaluating foundation models and VLMs for healthcare tasks.</p>
-        </div>
-        <div class="interest">
-          <div class="ibadge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16v12H4z" fill="#fff"/></svg></div>
-          <h3>Agents</h3>
-          <p>Agentic pipelines for literature, data curation, and clinical workflows.</p>
-        </div>
-        <div class="interest">
-          <div class="ibadge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h18" stroke="#fff" stroke-width="2"/><path d="M6 12a6 6 0 0 0 12 0" stroke="#fff" stroke-width="2"/></svg></div>
-          <h3>Robust/Continual</h3>
-          <p>Shift‑robust and incremental learning for real‑world deployment.</p>
-        </div>
-      </div>
-    </section>
+      <section id="projects">
+        <h2>Selected Projects</h2>
 
-    <section id="publications" aria-label="Publications">
-      <h2 class="section-title">Research Publications</h2>
-      <span class="underline"></span>
-      <div class="pubs2">
-        <div class="pubitem">
-          <div class="yearpill">2025</div>
-          <div>
-            <h3><a href="https://arxiv.org/abs/2405.13482" target="_blank" rel="noopener">Continual Learning in Medical Imaging: A Practical Survey and Analysis</a></h3>
-            <p class="meta">Qazi, M. Areeb; Yaqub, M.; Gonzalez, C.; Hashmi, A. U. R.; Sanjeev, S.; Saeed, N.; <em>et al.</em></p>
-            <p class="venue">Accepted — ACM Computing Surveys, 2025. Turin, Italy (venue item for style parity).</p>
-            <p class="desc">Comprehensive study with practical benchmarks and guidance for deploying CL in medical imaging.</p>
-          </div>
+        <div class="proj-item">
+          <p class="pub-title">DynaMMo <span class="proj-tag">MIUA 2024</span></p>
+          <p class="small">Compute- and memory-efficient method to alleviate catastrophic forgetting via lightweight adapters and post-hoc model merging.</p>
+          <p class="small"><a href="https://github.com/BioMedIA-MBZUAI/DynaMMo" target="_blank" rel="noopener">Code →</a></p>
         </div>
-        <div class="pubitem">
-          <div class="yearpill">2024</div>
-          <div>
-            <h3><a href="https://arxiv.org/pdf/2404.14099" target="_blank" rel="noopener">DynaMMo: Dynamic Model Merging for Class‑Incremental Learning in Medical Images</a></h3>
-            <p class="meta">Qazi, M. Areeb; <em>et al.</em></p>
-            <p class="venue">MIUA 2024 (preprint on arXiv).</p>
-            <p class="desc">Proposes dynamic merging of specialists to mitigate forgetting with low compute.</p>
-          </div>
+        <div class="proj-item">
+          <p class="pub-title">MedMerge <span class="proj-tag">MICCAI 2024</span></p>
+          <p class="small">Kernel-level fusion of models from diverse initializations; up to 3% F1 improvement on new medical tasks with no additional task-specific training.</p>
+          <p class="small"><a href="https://github.com/BioMedIA-MBZUAI/MedMerge" target="_blank" rel="noopener">Code →</a></p>
         </div>
-        <div class="pubitem">
-          <div class="yearpill">2023</div>
-          <div>
-            <h3><a href="https://link.springer.com/chapter/10.1007/978-981-97-1335-6_5" target="_blank" rel="noopener">Multi‑task Fetal Ultrasound Biometrics</a></h3>
-            <p class="meta">Qazi, M. Areeb; <em>et al.</em></p>
-            <p class="venue">MICCAD 2023 (Springer LNCS chapter).</p>
-          </div>
+        <div class="proj-item">
+          <p class="pub-title">XReal</p>
+          <p class="small">Controllable diffusion pipeline with spatial anatomy/pathology controllers and radiologist-in-the-loop validation for synthetic chest X-ray generation.</p>
+          <p class="small"><a href="https://github.com/BioMedIA-MBZUAI/XReal" target="_blank" rel="noopener">Code →</a></p>
         </div>
-        <div class="pubitem">
-          <div class="yearpill">2023</div>
-          <div>
-            <h3><a href="https://doi.org/10.1002/widm.1512" target="_blank" rel="noopener">Filter Bubbles in Recommender Systems: Fact or Fallacy — A Systematic Review</a></h3>
-            <p class="meta">Areeb, Q. M.; Nadeem, M.; Sohail, S. S.; Imam, R.; Doctor, F.; Himeur, Y.; Hussain, A.; Amira, A.</p>
-            <p class="venue">WIREs Data Mining and Knowledge Discovery, 2023.</p>
-          </div>
+        <div class="proj-item">
+          <p class="pub-title">PALM <span class="proj-tag">EMNLP 2024</span></p>
+          <p class="small">Dual-branch prompt learning technique for audio language models, improving few-shot performance without fine-tuning.</p>
+          <p class="small"><a href="https://github.com/asif-hanif/palm" target="_blank" rel="noopener">Code →</a></p>
         </div>
-        <div class="pubitem">
-          <div class="yearpill">2022</div>
-          <div>
-            <h3><a href="https://doi.org/10.1109/ACCESS.2022.3142918" target="_blank" rel="noopener">AI for Hearing‑Impaired Assistance in Emergencies</a></h3>
-            <p class="meta">Areeb, Q. M.; <em>et al.</em></p>
-            <p class="venue">IEEE Access, 2022.</p>
-          </div>
+        <div class="proj-item">
+          <p class="pub-title">ReefSFM</p>
+          <p class="small">Coral-reef segmentation on spatially referenced marine imagery, evaluated on orthomosaic geospatial imagery (Archireef internship).</p>
+          <p class="small"><a href="https://github.com/ArchiCloud/ReefSFM-Segmentation" target="_blank" rel="noopener">Code →</a></p>
         </div>
-        <div class="pubitem">
-          <div class="yearpill">2022</div>
-          <div>
-            <h3><a href="https://doi.org/10.1007/978-981-16-8403-6_21" target="_blank" rel="noopener">A Comparative Study of Learning Methods for Diabetic Retinopathy Classification</a></h3>
-            <p class="meta">Areeb, Q. M.; Nadeem, M.</p>
-            <p class="venue">Advances in Data Computing, Communication and Security (I3CS 2021). Springer.</p>
-          </div>
+        <div class="proj-item">
+          <p class="pub-title">Fetal Ultrasound Biometry Estimation <span class="proj-tag">MICCAD 2023</span></p>
+          <p class="small">Multi-task model for joint ROI detection and biometric estimation from fetal ultrasound scans.</p>
+          <p class="small"><a href="https://github.com/Areeb2735/Biometry-Parameter-Estimation-on-Ultrasound-Images" target="_blank" rel="noopener">Code →</a></p>
         </div>
-      </div>
-    </section>
+        <div class="proj-item">
+          <p class="pub-title">Hand Gesture Recognition <span class="proj-tag">IEEE Access 2022</span></p>
+          <p class="small">Deep learning for Indian Sign Language emergency gestures using spatial-temporal modeling (CNN + LSTM, transfer learning).</p>
+        </div>
+      </section>
 
-    <section id="projects" aria-label="Projects">
-      <h2 class="section-title">Featured Projects</h2>
-      <span class="underline"></span>
-      <div class="projects-grid">
-        <article class="proj">
-          <span class="year">2024</span>
-          <h3>DynaMMo</h3>
-          <p>Dynamic model merging for incremental learning in medical images.</p>
-          <div class="chips"><span class="chip">Continual Learning</span><span class="chip">Model Merging</span></div>
-          <p class="small"><a href="https://github.com/BioMedIA-MBZUAI/DynaMMo" target="_blank" rel="noopener">Code</a></p>
-        </article>
-        <article class="proj">
-          <span class="year">2024</span>
-          <h3>MedMerge</h3>
-          <p>Merging experts from diverse tasks to boost transfer on new medical tasks.</p>
-          <div class="chips"><span class="chip">Model Merging</span><span class="chip">MICCAI</span></div>
-          <p class="small"><a href="https://github.com/BioMedIA-MBZUAI/MedMerge" target="_blank" rel="noopener">Code</a></p>
-        </article>
-        <article class="proj">
-          <span class="year">2024</span>
-          <h3>XReal</h3>
-          <p>Realistic anatomy‑ and pathology‑aware chest X‑ray generation with controllable diffusion.</p>
-          <div class="chips"><span class="chip">Diffusion</span><span class="chip">Medical Imaging</span></div>
-          <p class="small"><a href="https://github.com/BioMedIA-MBZUAI/XReal" target="_blank" rel="noopener">Code</a></p>
-        </article>
-        <article class="proj">
-          <span class="year">2023</span>
-          <h3>ReefSFM</h3>
-          <p>Coral‑reef segmentation with evaluation on orthomosaic geospatial imagery (Archireef internship).</p>
-          <div class="chips"><span class="chip">Segmentation</span><span class="chip">Geospatial</span></div>
-          <p class="small"><a href="https://github.com/ArchiCloud/ReefSFM-Segmentation" target="_blank" rel="noopener">Code</a></p>
-        </article>
-        <article class="proj">
-          <span class="year">2023</span>
-          <h3>Biometry Estimation (MICCAD)</h3>
-          <p>Multi‑task fetal ultrasound model: ROI detection and biometric estimation.</p>
-          <div class="chips"><span class="chip">Ultrasound</span><span class="chip">Multi‑task</span></div>
-          <p class="small"><a href="https://github.com/Areeb2735/Biometry-Parameter-Estimation-on-Ultrasound-Images" target="_blank" rel="noopener">Code</a></p>
-        </article>
-        <article class="proj">
-          <span class="year">2021</span>
-          <h3>Hand Gesture Recognition (IEEE Access)</h3>
-          <p>Deep learning for Indian Sign Language emergency gestures; spatial‑temporal modeling.</p>
-          <div class="chips"><span class="chip">CNN</span><span class="chip">LSTM</span><span class="chip">Transfer Learning</span></div>
-        </article>
-      </div>
-    </section>
+      <section id="awards">
+        <h2>Awards &amp; Recognition</h2>
+        <ul>
+          <li>UAE Golden Visa, granted in recognition of professional achievements and contributions to AI engineering and research.</li>
+          <li>2nd Place, UAE Hackathon 2025 — AED 10,000 prize for outstanding innovation.</li>
+          <li>Best Presentation Award, AI Pioneers Program (TDRA × NUS), 2025.</li>
+          <li>Full scholarship for MSc, Mohamed Bin Zayed University of Artificial Intelligence.</li>
+          <li>Merit-Cum-Means Scholarship, Government of India, for bachelor's program.</li>
+          <li>AI Lead, Google Developer Student Club, Aligarh Muslim University, 2021.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
 
-    
-
-    <section id="contact" aria-label="Contact">
-      <h2 class="section-title">Get In Touch</h2>
-      <span class="underline"></span>
-    
-      <div class="contact-grid">
-        <!-- Left cards -->
-        <div class="contact-left">
-          <div class="contact-card">
-            <div class="c-head">
-              <div class="c-ico" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
-              </div>
-              <h3>Email</h3>
-            </div>
-            <p><a href="mailto:mohammadareebqazi@gmail.com">mohammadareebqazi@gmail.com</a></p>
-          </div>
-    
-          <div class="contact-card">
-            <div class="c-head">
-              <div class="c-ico" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5Z"/></svg>
-              </div>
-              <h3>Location</h3>
-            </div>
-            <p>Dubai, UAE · Abu Dhabi (MBZUAI)</p>
-          </div>
-        </div>
-    
-        <!-- Right buttons -->
-        <div class="link-list">
-          <a class="link-tile" href="https://www.linkedin.com/in/areebmohammad/" target="_blank" rel="noopener">
-            <span class="icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.75 2.63 4.75 6.06V23h-4v-7.4c0-1.76-.03-4.02-2.45-4.02-2.45 0-2.82 1.9-2.82 3.9V23h-4V8z"/></svg>
-            </span>
-            <span class="label">LinkedIn</span>
-            <span class="arrow">→</span>
-          </a>
-    
-          <a class="link-tile" href="https://github.com/Areeb2735" target="_blank" rel="noopener">
-            <span class="icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58V21.5c-3.34.73-4.04-1.6-4.04-1.6-.55-1.39-1.34-1.76-1.34-1.76-1.1-.76.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.39 1.25-3.23-.13-.3-.54-1.52.12-3.17 0 0 1.02-.33 3.35 1.23a11.67 11.67 0 0 1 6.1 0c2.32-1.56 3.34-1.23 3.34-1.23.67 1.65.26 2.87.13 3.17.78.84 1.24 1.92 1.24 3.23 0 4.61-2.8 5.62-5.47 5.92.43.37.81 1.1.81 2.23v3.31c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
-            </span>
-            <span class="label">GitHub</span>
-            <span class="arrow">→</span>
-          </a>
-    
-          <a class="link-tile" href="https://scholar.google.com/citations?user=KeyK8FQAAAAJ&hl=en" target="_blank" rel="noopener">
-            <span class="icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M12 3 1 10l11 7 4-2.5V20h6V10L12 3Z"/></svg>
-            </span>
-            <span class="label">Google Scholar</span>
-            <span class="arrow">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
-    
-
-    <footer>
-      <div>© <span id="year"></span> Mohammad Areeb Qazi. All rights reserved.</div>
-    </footer>
-  </main>
+  <footer>© <span id="year"></span> Mohammad Areeb Qazi</footer>
 
   <script>
-    // Theme toggle (light/dark)
     (function(){
       const btn=document.getElementById('theme-toggle');
       const stored=localStorage.getItem('theme');
       const prefersDark=window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if(stored==='dark' || (!stored && prefersDark)){
-        document.body.classList.add('dark');
-        if(btn) btn.textContent='☀️';
+      function apply(dark){
+        document.body.classList.toggle('dark', dark);
+        if(btn) btn.textContent = dark ? '☀️' : '🌙';
       }
-      function setTheme(next){
-        if(next==='dark'){
-          document.body.classList.add('dark');
-          localStorage.setItem('theme','dark');
-          if(btn) btn.textContent='☀️';
-        } else {
-          document.body.classList.remove('dark');
-          localStorage.setItem('theme','light');
-          if(btn) btn.textContent='🌙';
-        }
+      apply(stored==='dark' || (!stored && prefersDark));
+      if(btn){
+        btn.addEventListener('click', () => {
+          const dark = !document.body.classList.contains('dark');
+          apply(dark);
+          localStorage.setItem('theme', dark ? 'dark' : 'light');
+        });
       }
-      if(btn){ btn.addEventListener('click',()=>{ const isDark=document.body.classList.contains('dark'); setTheme(isDark?'light':'dark'); }); }
     })();
-
-    // Active nav on scroll
-    const links=[...document.querySelectorAll('header .nav a[href^="#"]')];
-    const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
-    const observer=new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        const id = '#'+entry.target.id;
-        const link = links.find(a=>a.getAttribute('href')===id);
-        if(entry.isIntersecting){ links.forEach(a=>a.classList.remove('active')); link&&link.classList.add('active'); }
-      });
-    },{rootMargin:'-60% 0px -35% 0px', threshold:[0,1]});
-    sections.forEach(s=>observer.observe(s));
-
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
